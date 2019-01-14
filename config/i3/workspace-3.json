@@ -1,0 +1,293 @@
+// vim:ts=4:sw=4:et
+{
+    // splitv split container with 2 children
+    "border": "pixel",
+    "floating": "auto_off",
+    "layout": "splitv",
+    "percent": 0.222916666666667,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "pixel",
+            "current_border_width": 2,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 360,
+               "width": 560,
+               "x": 0,
+               "y": 0
+            },
+            "name": "st",
+            "percent": 0.151315789473684,
+            "swallows": [
+               {
+                "class": "^st\\-256color$",
+                "instance": "^st\\-256color$",
+                "title": "^st$"
+               }
+            ],
+            "type": "con"
+        },
+        {
+            // splitv split container with 2 children
+            "border": "pixel",
+            "floating": "auto_off",
+            "layout": "splitv",
+            "percent": 0.848684210526316,
+            "type": "con",
+            "nodes": [
+                {
+                    "border": "pixel",
+                    "current_border_width": 2,
+                    "floating": "auto_off",
+                    "geometry": {
+                       "height": 360,
+                       "width": 560,
+                       "x": 0,
+                       "y": 0
+                    },
+                    "name": "st",
+                    "percent": 0.745293466223699,
+                    "swallows": [
+                       {
+                        "class": "^st\\-256color$",
+                        "instance": "^st\\-256color$",
+                        "title": "^st$"
+                       }
+                    ],
+                    "type": "con"
+                },
+                {
+                    "border": "pixel",
+                    "current_border_width": 2,
+                    "floating": "auto_off",
+                    "geometry": {
+                       "height": 360,
+                       "width": 560,
+                       "x": 0,
+                       "y": 0
+                    },
+                    "name": "st",
+                    "percent": 0.254706533776301,
+                    "swallows": [
+                       {
+                        "class": "^st\\-256color$",
+                        "instance": "^st\\-256color$",
+                        "title": "^st$"
+                       }
+                    ],
+                    "type": "con"
+                }
+            ]
+        }
+    ]
+}
+
+{
+    // splitv split container with 2 children
+    "border": "pixel",
+    "floating": "auto_off",
+    "layout": "splitv",
+    "percent": 0.777083333333333,
+    "type": "con",
+    "nodes": [
+        {
+            // splith split container with 2 children
+            "border": "pixel",
+            "floating": "auto_off",
+            "layout": "splith",
+            "percent": 0.847744360902256,
+            "type": "con",
+            "nodes": [
+                {
+                    // splitv split container with 2 children
+                    "border": "pixel",
+                    "floating": "auto_off",
+                    "layout": "splitv",
+                    "percent": 0.627345844504021,
+                    "type": "con",
+                    "nodes": [
+                        {
+                            "border": "pixel",
+                            "current_border_width": 2,
+                            "floating": "auto_off",
+                            "geometry": {
+                               "height": 360,
+                               "width": 560,
+                               "x": 0,
+                               "y": 0
+                            },
+                            "name": "st",
+                            "percent": 0.248337028824834,
+                            "swallows": [
+                               {
+                                "class": "^st\\-256color$",
+                                "instance": "^st\\-256color$",
+                                "title": "^st$"
+                               }
+                            ],
+                            "type": "con"
+                        },
+                        {
+                            "border": "pixel",
+                            "current_border_width": 2,
+                            "floating": "auto_off",
+                            "geometry": {
+                               "height": 360,
+                               "width": 560,
+                               "x": 0,
+                               "y": 0
+                            },
+                            "name": "st",
+                            "percent": 0.751662971175166,
+                            "swallows": [
+                               {
+                                "class": "^st\\-256color$",
+                                "instance": "^st\\-256color$",
+                                "title": "^st$"
+                               }
+                            ],
+                            "type": "con"
+                        }
+                    ]
+                },
+                {
+                    // splitv split container with 2 children
+                    "border": "pixel",
+                    "floating": "auto_off",
+                    "layout": "splitv",
+                    "percent": 0.372654155495979,
+                    "type": "con",
+                    "nodes": [
+                        {
+                            "border": "pixel",
+                            "current_border_width": 2,
+                            "floating": "auto_off",
+                            "geometry": {
+                               "height": 360,
+                               "width": 560,
+                               "x": 0,
+                               "y": 0
+                            },
+                            "name": "st",
+                            "percent": 0.405764966740576,
+                            "swallows": [
+                               {
+                                "class": "^st\\-256color$",
+                                "instance": "^st\\-256color$",
+                                "title": "^st$"
+                               }
+                            ],
+                            "type": "con"
+                        },
+                        {
+                            // splitv split container with 2 children
+                            "border": "pixel",
+                            "floating": "auto_off",
+                            "layout": "splitv",
+                            "percent": 0.594235033259424,
+                            "type": "con",
+                            "nodes": [
+                                {
+                                    "border": "pixel",
+                                    "current_border_width": 2,
+                                    "floating": "auto_off",
+                                    "geometry": {
+                                       "height": 360,
+                                       "width": 560,
+                                       "x": 0,
+                                       "y": 0
+                                    },
+                                    "name": "st",
+                                    "percent": 0.218283582089552,
+                                    "swallows": [
+                                       {
+                                        "class": "^st\\-256color$",
+                                        "instance": "^st\\-256color$",
+                                        "title": "^st$"
+                                       }
+                                    ],
+                                    "type": "con"
+                                },
+                                {
+                                    // splitv split container with 2 children
+                                    "border": "pixel",
+                                    "floating": "auto_off",
+                                    "layout": "splitv",
+                                    "percent": 0.781716417910448,
+                                    "type": "con",
+                                    "nodes": [
+                                        {
+                                            "border": "pixel",
+                                            "current_border_width": 2,
+                                            "floating": "auto_off",
+                                            "geometry": {
+                                               "height": 360,
+                                               "width": 560,
+                                               "x": 0,
+                                               "y": 0
+                                            },
+                                            "name": "st",
+                                            "percent": 0.405727923627685,
+                                            "swallows": [
+                                               {
+                                                "class": "^st\\-256color$",
+                                                "instance": "^st\\-256color$",
+                                                "title": "^st$"
+                                               }
+                                            ],
+                                            "type": "con"
+                                        },
+                                        {
+                                            "border": "pixel",
+                                            "current_border_width": 2,
+                                            "floating": "auto_off",
+                                            "geometry": {
+                                               "height": 360,
+                                               "width": 560,
+                                               "x": 0,
+                                               "y": 0
+                                            },
+                                            "name": "st",
+                                            "percent": 0.594272076372315,
+                                            "swallows": [
+                                               {
+                                                "class": "^st\\-256color$",
+                                                "instance": "^st\\-256color$",
+                                                "title": "^st$"
+                                               }
+                                            ],
+                                            "type": "con"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "border": "pixel",
+            "current_border_width": 2,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 360,
+               "width": 560,
+               "x": 0,
+               "y": 0
+            },
+            "name": "cava",
+            "percent": 0.152255639097744,
+            "swallows": [
+               {
+                "class": "^st\\-256color$",
+                "instance": "^st\\-256color$",
+                "title": "^cava$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+

@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+STATUS=$(playerctl status)
+if [[ "$STATUS" == 'Playing' ]]; then
+
+   ARTIST=$(playerctl metadata artist)
+   TITLE=$(playerctl metadata title)
+   TIME=$(playerctl metadata )
+   echo "   $ARTIST - $TITLE"
+#  echo "♪ $META"
+fi

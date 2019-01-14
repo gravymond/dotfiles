@@ -1,0 +1,331 @@
+# i3 config file
+# see http://i3wm.org/docs/userguide.html for a complete reference!
+
+#mod key
+set $mod Mod4
+
+#===autostart parograms===
+
+#start compositor (xcompmgr)
+#exec --no-startup-id xcompmgr &
+
+#start compositor (compton)
+exec --no-startup-id compton --config /home/talisman/.config/compton.conf &
+
+#initialize ethernet
+exec --no-startup-id ~/init-eth.sh &
+
+#volume applet
+exec --no-startup-id pnmixer &
+
+#config monitors
+exec --no-startup-id xrandr --output HDMI-1  --primary &
+
+#vnc server
+#exec --no-startup-id vncserver &
+
+#notify server
+exec --no-startup-id dunst -startup_notification -conf /home/talisman/.config/dunst/dunstrc &
+
+#===appearance===
+
+# wallpaper
+exec --no-startup-id nitrogen --restore &
+
+# font
+font pango:hack, FontAwesome 10
+
+
+# i3bar & conky
+set $transparent #15151500
+
+bar {
+	i3bar_command i3bar -t
+	status_command /home/$USER/.config/i3/i3status-conky/i3status.sh
+    position top
+#   mode hide
+	workspace_buttons yes
+	tray_output primary
+#	tray_padding 3
+	separator_symbol "  "
+	height 25
+
+	colors {
+	
+	background $transparent
+	statusline #dedede
+	separator #454545
+
+# workspace buttons
+
+	focused_workspace $transparent $transparent #ff8800
+	active_workspace #2d2d2d $transparent #dedede
+	inactive_workspace $transparent $transparent #dedede
+	urgent_workspace #ffffff $transparent #d23d32
+	
+	}
+}
+
+#---window style---
+
+# new window
+new_window pixel 1
+new_float normal
+hide_edge_borders both
+
+# class                 border  backgr. text    indicator child_border
+client.focused          #4c7899 #285577 #ffffff #ff0000   #ff8800
+client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
+client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+client.urgent           #2f343a #900000 #ffffff #900000   #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+
+client.background       #ffffff
+
+# popups
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="task_dialog"] floating enable
+
+# float programs(find the programs'names in "/usr/share/applictions")
+for_window [class="Minecraft Launcher"] floating enable
+for_window [class="Gpicview"] floating enable
+for_window [class="mpv"] floating enable
+#for_window [class="feh"] floating enable
+for_window [class="sxiv"] floating enable
+for_window [class="Mousepad"] floating enable
+for_window [instance="st" title="floatst"] floating enable, move scratchpad, scratchpad show;
+for_window [class="nitrogen"] floating enable
+
+# program binds
+
+# rofi - desktop
+bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu='~/rofi-programs.sh | rofi -i -width 320 -height 240 -padding 25 -dmenu'
+
+# rofi - windows
+bindsym $mod+Shift+d exec --no-startup-id rofi -show window
+
+# rofi - emoji
+bindsym $mod+p exec --no-startup-id ~/.config/i3/dmenuunicode.sh
+
+# tmux terminal
+bindsym $mod+Return exec --no-startup-id st -e tmux
+
+# terminal floating
+bindsym $mod+Shift+Return exec --no-startup-id st -T "floatst"
+
+# terminal
+bindsym $mod+mod1+Return exec --no-startup-id st
+
+# ranger
+#bindsym $mod+Shift+x exec --no-startup-id st -e ranger
+
+# midnight commander
+bindsym $mod+Shift+x exec --no-startup-id st -e mc
+
+# volume
+bindsym $mod+m exec --no-startup-id st -e pacmixer
+
+# volume controls
+bindsym $mod+F12 exec --no-startup-id pactl set-sink-volume 0 +5% 
+bindsym $mod+F11 exec --no-startup-id pactl set-sink-volume 0 -5% 
+bindsym $mod+F10 exec --no-startup-id pactl set-sink-mute 0 toggle
+
+# GUI file manager
+bindsym $mod+e 			exec --no-startup-id thunar
+
+# screenshot
+bindsym Print exec --no-startup-id /home/talisman/scrot.sh
+
+#===workspace control===
+#firefox
+set $WS1  " 1:  "
+#spotify
+set $WS2  " 2:  "
+#system
+set $WS3  " 3:  "
+#discord (icon gets glitched when there's a space infront of it)
+set $WS4  " 4: "
+#files & torrent
+set $WS5  "  5:  "
+#steam
+set $WS6  " 6:  "
+#active games
+set $WS7  " 7:  "
+#ssh & vnc
+set $WS8  " 8:  "
+#art
+set $WS9  " 9:  "
+#set $WS10 " 10:  "
+
+#---switch workspace---
+
+# mod1 --> alt
+# switch to near workspace
+bindsym mod1+Tab workspace next
+bindsym $mod+Tab workspace prev
+
+# switch to workspace
+bindsym $mod+1 workspace $WS1
+bindsym $mod+2 workspace $WS2
+bindsym $mod+3 workspace $WS3
+bindsym $mod+4 workspace $WS4
+bindsym $mod+5 workspace $WS5
+bindsym $mod+6 workspace $WS6
+bindsym $mod+7 workspace $WS7
+bindsym $mod+8 workspace $WS8
+bindsym $mod+9 workspace $WS9
+bindsym $mod+0 workspace $WS10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $WS1
+bindsym $mod+Shift+2 move container to workspace $WS2
+bindsym $mod+Shift+3 move container to workspace $WS3
+bindsym $mod+Shift+4 move container to workspace $WS4
+bindsym $mod+Shift+5 move container to workspace $WS5
+bindsym $mod+Shift+6 move container to workspace $WS6
+bindsym $mod+Shift+7 move container to workspace $WS7
+bindsym $mod+Shift+8 move container to workspace $WS8
+bindsym $mod+Shift+9 move container to workspace $WS9
+#bindsym $mod+Shift+0 move container to workspace $WS10
+bindsym $mod+Shift0		 move scratchpad
+#bindsym $mod+Shift+0 scratchpad show
+
+#===window control===
+
+# fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# kill focused window($mod4=Alt)
+bindsym $mod+q kill
+bindsym $mod+mod1+q exec --no-startup-id xkill
+
+# hide | show window(minus is "-" and plus is "+".)
+bindsym $mod+minus move scratchpad
+bindsym $mod+plus scratchpad show
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+t layout tabbed
+bindsym $mod+c layout toggle split
+
+# change border style
+bindsym $mod+u border none
+bindsym $mod+n border normal
+bindsym $mod+o border pixel
+bindsym $mod+b border toggle
+
+#---window focus---
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# foucus follows mouse(cursor)
+focus_follows_mouse yes
+
+# change focus
+#bindsym $mod+h focus left
+#bindsym $mod+k focus up
+#bindsym $mod+l focus right
+## alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# focus the parent container
+#bindsym $mod+mod4+p focus parent
+
+# focus the child container
+#bindsym $mod+d focus child
+
+#---move window---
+
+# Use Mouse+$mod to drag a floating window
+floating_modifier $mod
+
+# move floating/tiling window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+#---split window---
+
+# horizontal orientation
+bindsym $mod+h split h
+
+# vertical orientation
+bindsym $mod+v split v
+
+
+#---resize window---
+
+mode "resize" {
+        bindsym j resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym l resize shrink height 10 px or 10 ppt
+        bindsym semicolon resize grow width 10 px or 10 ppt
+    	# same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+    	# back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+#you can also use the mouse for resizing
+
+#===volume control===
+#bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -c 0 -q set Master 2dB+ unmute
+#bindsym XF86AudioLowerVolume exec --no-startup-id amixer -c 0 -q set Master 2dB- unmute
+#bindsym XF86AudioMute exec --no-startup-id amixer -q set Master toggle
+
+#===power manager===
+set $mode_system select: lock(L) exit(E) reboot(R) poweroff(O) cancel(Esc)
+bindsym $mod+Shift+q mode "$mode_system"
+mode "$mode_system" {
+    bindsym l exec --no-startup-id i3lock -c '#000000', mode "default"
+    bindsym e exec --no-startup-id i3-msg exit, mode "default"
+    bindsym r exec --no-startup-id sudo reboot, mode "default"
+    bindsym o exec --no-startup-id sudo poweroff, mode "default"
+    bindsym Escape mode "default"
+}
+
+#===manage i3===
+
+# reload the configuration file
+bindsym $mod+Shift+r reload
+
+# restart i3 inplace
+bindsym $mod+Shift+s restart
+
+# i3lock
+ mode "i3lock: Return to lock/Escape to Cancel" {
+            bindsym Return mode "default" exec /home/talisman/lock.sh	
+            bindsym Escape mode "default"
+    }
+
+bindsym Ctrl+mod1+l mode "i3lock: Return to lock/Escape to Cancel"
+
+
+# exit i3
+#bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+#i3-gaps
+gaps inner 20
+gaps outer 10
+smart_gaps on
+smart_borders on
