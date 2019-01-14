@@ -1,3 +1,10 @@
+/*
+ *  patches applied:
+ *  alpha 0.8.1
+ *  boxdraw 2018-11-01
+ *  clipboard 0.8.1
+ * */
+
 /* See LICENSE file for copyright and license details. */
 
 /*
