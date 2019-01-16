@@ -1,1 +1,0 @@
-playerctl metadata title | zscroll -b "playing: "
