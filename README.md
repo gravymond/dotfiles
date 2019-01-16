@@ -1,5 +1,5 @@
 # gravymond dotfiles
-these are the dotfiles i use across both my desktop and laptop. they're a mishmash of a bunch of other configs and scripts i found across the internet. they are not well documented. 
+these are the dotfiles i use across both my desktop and laptop. they're a mishmash of a bunch of other configs and scripts i found across the internet. they are not very well documented.
 
 ## included configs
 
@@ -29,7 +29,7 @@ these are the dotfiles i use across both my desktop and laptop. they're a mishma
  
 * init-eth.sh - ethernet jumper script
  
-* formatTime.sh - used to format playerctl metadata length
+* formatTime.sh - used to format playerctl metadata length from spotify
  
 * marquee.sh - text scroller for shells
  
