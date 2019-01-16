@@ -2,23 +2,23 @@
 these are the dotfiles i use across both my desktop and laptop. they're a mishmash of a bunch of other configs and scripts i found across the internet. they are not well documented. 
 
 ##included configs
-..*cava
+*cava
 
-..*compton
+*compton
 
-..*dunst
+*dunst
 
-..*i3
+*i3
 
-..*micro
+*micro
 
-..*qutebrowser
+*qutebrowser
 
-..*rofi
+*rofi
 
-..*st
+*st
 
-..*volumeicon
+*volumeicon
 
 ## included scripts
 
